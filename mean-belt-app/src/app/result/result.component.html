@@ -1,0 +1,15 @@
+<h1> {{currentUser.name}} ended the Bid </h1>
+<button (click)="logout()">Logout</button>
+
+<h3>Highest Bidder per product</h3>
+
+<p>Product 1</p>
+<p>{{highbid1[0]._user.name}} bid {{highbid1[0].amount}}</p>
+
+<p>Product 2</p>
+<p>{{highbid2[0]._user.name}} bid {{highbid2[0].amount}}</p>
+
+<p>Product 3</p>
+<p>{{highbid3[0]._user.name}} bid {{highbid3[0].amount}}</p>
+
+<button (click)="clearBids()">Star Bids</button>

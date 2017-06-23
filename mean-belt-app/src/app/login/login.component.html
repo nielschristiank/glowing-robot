@@ -1,0 +1,7 @@
+<fieldset>
+  <legend>Login</legend>
+  <form (submit)="login()">
+    <p><label>Username: </label><input type="text" name="name" [(ngModel)]="user.name" #name="ngModel"></p>
+    <input type="submit" value="Login">
+  </form>
+</fieldset>

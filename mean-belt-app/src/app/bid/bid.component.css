@@ -1,0 +1,14 @@
+.product{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.product_img {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+}
+
+small{
+  color: red;
+}

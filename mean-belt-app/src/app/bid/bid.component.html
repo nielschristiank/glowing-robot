@@ -1,0 +1,62 @@
+<h1>Welcome, {{currentUser.name}}! Bid Now!</h1>
+<button (click)="logout()">Logout</button>
+
+<small *ngFor="let error of errors">{{error}}</small>
+
+<div>
+  <div class="product">
+    <div class="product_img">
+    </div>
+    <p>Product 1</p>
+    <form (submit)="placeBid1()">
+      <input type="number" name="amount" [(ngModel)]="bid1.amount" #amount="ngModel">
+      <!-- <input type="hidden" name="_user" value="value" [(ngModel)]="bid1._user" #_user="ngModel"> -->
+      <input type="submit" value="Bid">
+    </form>
+
+    <div class="bids">
+      <p>Current Bids</p>
+      <div *ngFor="let bid of bids"><p *ngIf="bid._product == 'product1' ">{{bid._user.name}} place bid for ${{bid.amount}}</p></div>
+    </div>
+
+    <!-- <form (submit)="search()">
+      <input type="text" name="data" [(ngModel)]="searchData.data" #data="ngModel">
+      <input type="submit" value="search">
+    </form> -->
+
+  </div>
+  <div class="product">
+    <div class="product_img">
+    </div>
+    <p>Product 2</p>
+    <form (submit)="placeBid2()">
+      <input type="number" name="amount" [(ngModel)]="bid2.amount" #amount="ngModel">
+      <input type="hidden" name="_user" [value]="currentUser._id" [(ngModel)]="bid2._user" #_user="ngModel">
+      <input type="submit" value="Bid">
+    </form>
+
+    <div class="bids">
+      <p>Current Bids</p>
+      <div *ngFor="let bid of bids"><p *ngIf="bid._product == 'product2' ">{{bid._user.name}} place bid for ${{bid.amount}}</p></div>
+    </div>
+
+  </div>
+  <div class="product">
+    <div class="product_img">
+    </div>
+    <p>Product 3</p>
+    <form (submit)="placeBid3()">
+      <input type="number" name="amount" [(ngModel)]="bid3.amount" #amount="ngModel">
+      <input type="hidden" name="_user" [value]="currentUser._id" [(ngModel)]="bid3._user" #_user="ngModel">
+      <input type="submit" value="Bid">
+    </form>
+
+    <div class="bids">
+      <p>Current Bids</p>
+      <div *ngFor="let bid of bids"><p *ngIf="bid._product == 'product3' ">{{bid._user.name}} place bid for ${{bid.amount}}</p></div>
+    </div>
+
+  </div>
+</div>
+
+<button (click)="endBids()">End Bids</button>
